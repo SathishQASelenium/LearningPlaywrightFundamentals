@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'add README.md documentation *)",
+      "Bash(git push *)",
+      "Bash(git branch *)",
+      "Bash(git commit *)"
+    ]
+  }
+}
