@@ -51,6 +51,7 @@ npx playwright show-report
 ## 📁 Project Structure
 - `tests/`: Contains all test suites organized by module.
   - `01_Basics/`: Fundamental Playwright concepts and initial labs.
+  - `02_First_Tests/`: Advanced browser context, page management and initial test execution.
 - `playwright.config.ts`: Configuration for the Playwright test runner.
 - `package.json`: Project dependencies and scripts.
 
