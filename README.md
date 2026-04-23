@@ -84,16 +84,6 @@ LearningPlaywrightFundamentals/
 
 ---
 
-## 🖼️ Visual Evidence
-
-### 📈 Test Execution Flow
-![Execution Flow](https://via.placeholder.com/800x400?text=Visual+Flow:+Lab+➔+Task+➔+Validation)
-
-### 📊 Reporting Dashboard
-![Report Sample](https://via.placeholder.com/800x400?text=Screenshot+of+Playwright+HTML+Report)
-
----
-
 ## ⚙️ Quick Start Guide
 
 ### Installation
