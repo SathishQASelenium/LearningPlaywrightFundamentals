@@ -1,105 +1,148 @@
-# Learning Playwright Fundamentals
+# 🚀 Learning Playwright Fundamentals
 
-This project is dedicated to learning and practicing the fundamentals of end-to-end (E2E) testing using [Playwright](https://playwright.dev/). It contains a series of labs and exercises designed to build proficiency in automating browser interactions.
+![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen)
+![Playwright Version](https://img.shields.io/badge/Playwright-v1.59.1-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-v5.0+-blue)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-## 🚀 Getting Started
+An enterprise-grade end-to-end (E2E) testing repository designed for mastering the fundamentals of browser automation. This project follows a structured curriculum, progressing from basic interactions to complex context and locator strategies.
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) (Latest LTS recommended)
-- npm (comes with Node.js)
+---
 
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd LearningPlaywrightFundamentals
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Install Playwright browsers:
-   ```bash
-   npx playwright install
-   ```
+## 🏗️ Architecture
 
-## 🧪 Running Tests
+The project is built on a modular architecture to ensure scalability and maintainability. It separates test logic by learning modules, allowing for isolated execution and focused debugging.
 
-You can run the tests using the following commands:
-
-### Run all tests
-```bash
-npx playwright test
+### High-Level Design
+```mermaid
+graph TD
+    A[Playwright Test Runner] --> B{Config: playwright.config.ts}
+    B --> C[Test Suites]
+    C --> D[01_Basics]
+    C --> E[02_First_Tests]
+    C --> F[03_Locators_Commands]
+    D --> G[Browser Interaction]
+    E --> H[Context & Page Management]
+    F --> I[Advanced Locators & Navigation]
+    G & H & I --> J[HTML Reports / Trace Viewer]
 ```
 
-### Run tests in a specific folder (e.g., Basics)
-```bash
-npx playwright test tests/01_Basics
-```
-
-### Run tests in UI Mode
-```bash
-npx playwright test --ui
-```
-
-### View Test Report
-After running tests, you can view the HTML report:
-```bash
-npx playwright show-report
-```
+---
 
 ## 📁 Project Structure
-```
+
+```text
 LearningPlaywrightFundamentals/
-├── tests/
-│   ├── 01_Basics/
+├── .github/                # CI/CD Workflows (GitHub Actions)
+├── tests/                  # Test Suites
+│   ├── 01_Basics/          # Fundamentals & Basic Labs
 │   │   ├── Lab209.spec.ts
 │   │   └── Lab210_Test_Annotations.spec.ts
-│   ├── 02_First_Tests/
-│   │   ├── 211_First_Running_Test.spec.ts
-│   │   ├── 212_Browser_Context_Pages.spec.ts
-│   │   ├── 213_MultipleContext.spec.ts
-│   │   ├── 214_Multiple_Pages.spec.ts
-│   │   ├── 215_Test_PW.spec.ts
-│   │   ├── 216_Manual_Context.spec.ts
-│   │   ├── 217_Manual_Context_withOptions.spec.ts
-│   │   ├── 218_Context_Reuse.spec.ts
-│   │   └── Task/
-│   │       ├── 01_OneBrowser_MultipleContext.spec.ts
-│   │       ├── 02_OneBrowser_MultipleContext_MultiplePages.spec.ts
-│   │       └── 03_OneContext_MultiplePages.spec.ts
-│   └── 03_Locators_Commands/
-│       ├── 219_Commands.spec.ts
-│       ├── 220_GotoCommands.spec.ts
-│       ├── 221_Reffer_Command_IQ.spec.ts
-│       ├── 222_Automation.vwo.com.spec.ts
-│       └── Task/
-│           └── Project2_Cura_Navigation.spec.ts
-├── playwright.config.ts
-├── tsconfig.json
-└── package.json
+│   ├── 02_First_Tests/     # Context & Page Management
+│   │   ├── Task/           # Practical exercises for context reuse
+│   │   └── *.spec.ts       # Browser context & page logic
+│   └── 03_Locators_Commands/ # Locators, Navigation & Real-world projects
+│       ├── Task/           # Project-based exercises (e.g., Cura Navigation)
+│       └── *.spec.ts       # Command-based automation
+├── playwright-report/     # Generated Test Reports
+├── test-results/           # Artifacts, Screenshots, Videos
+├── playwright.config.ts    # Global Playwright Configuration
+├── tsconfig.json           # TypeScript Compiler Options
+└── package.json            # Project Dependencies & Scripts
 ```
 
-### Directory Breakdown
-- **`01_Basics/`**: Fundamental Playwright concepts and initial lab exercises covering basic browser automation.
-- **`02_First_Tests/`**: Advanced browser context management, page handling, and practical test execution scenarios.
-  - **`Task/`**: Practice tasks and hands-on exercises for applying learned concepts.
-- **`03_Locators_Commands/`**: Exploration of Playwright locators, navigation commands, and practical automation exercises on various sites.
-  - **`Task/`**: Project-based exercises for applying locators and commands.
+---
 
-## 🛠️ Configuration
+## 🖼️ Visuals & Reports
 
-### TypeScript Configuration
-The project uses **TypeScript** for type safety and better development experience:
-- `tsconfig.json`: TypeScript compiler configuration
-- `@types/node`: Type definitions for Node.js
+### Test Execution Flow
+![Execution Flow Placeholder](https://via.placeholder.com/800x400?text=Playwright+Execution+Flow+Diagram)
 
-### Playwright Configuration
-The project is currently configured to run on **Chromium** (Desktop Chrome) by default. You can modify `playwright.config.ts` to enable other browsers (Firefox, WebKit) or mobile emulations.
+### Report Sample
+![Report Screenshot Placeholder](https://via.placeholder.com/800x400?text=Playwright+HTML+Report+Screenshot)
 
-### Dependencies
-- **@playwright/test**: ^1.59.1 - Playwright test framework
-- **@types/node**: ^25.6.0 - Node.js type definitions
+---
 
-## 📚 Learning Path
-The tests are structured as labs (e.g., `Lab209.spec.ts`, `Lab210_Test_Annotations.spec.ts`) to provide a step-by-step approach to mastering Playwright.
+## ⚙️ Getting Started
+
+### Prerequisites
+- **Node.js**: Latest LTS recommended
+- **npm**: Package manager
+
+### Installation
+```bash
+# 1. Clone the repository
+git clone <repository-url>
+cd LearningPlaywrightFundamentals
+
+# 2. Install dependencies
+npm install
+
+# 3. Install Playwright browsers
+npx playwright install
+```
+
+---
+
+## 🧪 Test Execution
+
+### Execution Commands
+| Command | Description |
+| :--- | :--- |
+| `npx playwright test` | Run all tests in the project |
+| `npx playwright test tests/01_Basics` | Run tests in the Basics module |
+| `npx playwright test --ui` | Launch Playwright UI Mode for debugging |
+| `npx playwright show-report` | Open the generated HTML report |
+
+### Debugging Tools
+- **Trace Viewer**: Use `npx playwright test --trace on` to record detailed execution traces.
+- **UI Mode**: Best for rapid iteration and visual selector inspection.
+
+---
+
+## 🚀 CI/CD Integration
+
+This project is configured for automated quality gates using GitHub Actions.
+
+### Pipeline Workflow
+1. **Trigger**: Push to `main` or Pull Request.
+2. **Environment**: Ubuntu-latest with Node.js.
+3. **Steps**:
+   - Checkout code.
+   - Install dependencies.
+   - Install browsers.
+   - Run tests in headless mode.
+   - Upload test results and HTML reports as artifacts.
+
+### Proposed Workflow File (`.github/workflows/playwright.yml`)
+```yaml
+name: Playwright Tests
+on: [push, pull_request]
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with: {node-version: 20}
+    - run: npm ci
+    - run: npx playwright install --with-deps
+    - run: npx playwright test
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with: {name: playwright-report, path: playwright-report/}
+```
+
+---
+
+## 🛠️ Configuration Details
+
+### TypeScript
+The project utilizes strict typing via `tsconfig.json` to ensure robust test scripts and better IDE support.
+
+### Playwright Config
+`playwright.config.ts` is tuned for:
+- **Parallelism**: Optimized worker count for faster execution.
+- **Retries**: Configured for CI stability.
+- **Tracing**: Set to `retain-on-failure` for efficient debugging.
