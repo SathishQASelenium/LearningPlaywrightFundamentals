@@ -55,19 +55,26 @@ LearningPlaywrightFundamentals/
 │   ├── 01_Basics/
 │   │   ├── Lab209.spec.ts
 │   │   └── Lab210_Test_Annotations.spec.ts
-│   └── 02_First_Tests/
-│       ├── 211_First_Running_Test.spec.ts
-│       ├── 212_Browser_Context_Pages.spec.ts
-│       ├── 213_MultipleContext.spec.ts
-│       ├── 214_Multiple_Pages.spec.ts
-│       ├── 215_Test_PW.spec.ts
-│       ├── 216_Manual_Context.spec.ts
-│       ├── 217_Manual_Context_withOptions.spec.ts
-│       ├── 218_Context_Reuse.spec.ts
+│   ├── 02_First_Tests/
+│   │   ├── 211_First_Running_Test.spec.ts
+│   │   ├── 212_Browser_Context_Pages.spec.ts
+│   │   ├── 213_MultipleContext.spec.ts
+│   │   ├── 214_Multiple_Pages.spec.ts
+│   │   ├── 215_Test_PW.spec.ts
+│   │   ├── 216_Manual_Context.spec.ts
+│   │   ├── 217_Manual_Context_withOptions.spec.ts
+│   │   ├── 218_Context_Reuse.spec.ts
+│   │   └── Task/
+│   │       ├── 01_OneBrowser_MultipleContext.spec.ts
+│   │       ├── 02_OneBrowser_MultipleContext_MultiplePages.spec.ts
+│   │       └── 03_OneContext_MultiplePages.spec.ts
+│   └── 03_Locators_Commands/
+│       ├── 219_Commands.spec.ts
+│       ├── 220_GotoCommands.spec.ts
+│       ├── 221_Reffer_Command_IQ.spec.ts
+│       ├── 222_Automation.vwo.com.spec.ts
 │       └── Task/
-│           ├── 01_OneBrowser_MultipleContext.spec.ts
-│           ├── 02_OneBrowser_MultipleContext_MultiplePages.spec.ts
-│           └── 03_OneContext_MultiplePages.spec.ts
+│           └── Project2_Cura_Navigation.spec.ts
 ├── playwright.config.ts
 ├── tsconfig.json
 └── package.json
@@ -77,6 +84,8 @@ LearningPlaywrightFundamentals/
 - **`01_Basics/`**: Fundamental Playwright concepts and initial lab exercises covering basic browser automation.
 - **`02_First_Tests/`**: Advanced browser context management, page handling, and practical test execution scenarios.
   - **`Task/`**: Practice tasks and hands-on exercises for applying learned concepts.
+- **`03_Locators_Commands/`**: Exploration of Playwright locators, navigation commands, and practical automation exercises on various sites.
+  - **`Task/`**: Project-based exercises for applying locators and commands.
 
 ## 🛠️ Configuration
 
