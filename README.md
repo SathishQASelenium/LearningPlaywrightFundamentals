@@ -32,7 +32,11 @@ I've structured this project as a structured curriculum. Each module represents 
 - **Core Concepts**: Advanced Locators, `goto` commands, and real-world automation.
 - **Applied Projects**:
   - `219` to `222`: Testing diverse sites including `automation.vwo.com` and `Command IQ`.
-  - **Capstone**: `Project2_Cura_Navigation.spec.ts` — a complete automation flow for Cura Healthcare.
+  - `223`: Mastering XPath for complex DOM traversal.
+  - `224`: Using `getByRole` for accessible and robust element targeting.
+  - **Capstone**: 
+    - `Project2_Cura_Navigation.spec.ts` — a complete automation flow for Cura Healthcare.
+    - `Project3_App.vwo.com.spec.ts` — comprehensive testing for app.vwo.com.
 
 ---
 
@@ -74,8 +78,9 @@ LearningPlaywrightFundamentals/
 │   │   └── [211-218].spec.ts # Core context learning labs
 │   └── 03_Locators_Commands/ # 🎯 Precision Targeting
 │       ├── Task/           # 🏥 Project: Cura Healthcare Navigation
-│       │   └── Project2_Cura_Navigation.spec.ts
-│       └── [219-222].spec.ts # Locator & Command labs
+│       │   ├── Project2_Cura_Navigation.spec.ts
+│       │   └── Project3_App.vwo.com.spec.ts
+│       └── [219-224].spec.ts # Locator & Command labs
 ├── playwright-report/      # 📊 Results & Insights
 ├── test-results/           # 📸 Evidence (Screenshots & Videos)
 ├── playwright.config.ts    # ⚙️ Global Configuration
