@@ -34,9 +34,21 @@ I've structured this project as a structured curriculum. Each module represents 
   - `219` to `222`: Testing diverse sites including `automation.vwo.com` and `Command IQ`.
   - `223`: Mastering XPath for complex DOM traversal.
   - `224`: Using `getByRole` for accessible and robust element targeting.
+  - `225`: CSS selectors for precision targeting.
+  - `226`: Interaction patterns with `pressSequentially`.
+  - `227`: Managing browser cookies and state.
   - **Capstone**: 
     - `Project2_Cura_Navigation.spec.ts` — a complete automation flow for Cura Healthcare.
     - `Project3_App.vwo.com.spec.ts` — comprehensive testing for app.vwo.com.
+    - `Project3_vwo.com_FreeTrailInvalidEmail.spec.ts` — specialized edge-case testing for VWO.
+
+### 🟠 Stage 4: Session & State Persistence (`04_Session_Storage`)
+*Deep dive into maintaining user sessions and persisting state across test runs.*
+- **Core Concepts**: Session storage, state saving/loading, and authenticated flows.
+- **Practical Application**:
+  - `228`: Session management fundamentals.
+  - `229`: Applying session persistence to `app.vwo.com`.
+
 
 ---
 
@@ -77,10 +89,13 @@ LearningPlaywrightFundamentals/
 │   │   │   └── 03_OneContext_MultiplePages.spec.ts
 │   │   └── [211-218].spec.ts # Core context learning labs
 │   └── 03_Locators_Commands/ # 🎯 Precision Targeting
-│       ├── Task/           # 🏥 Project: Cura Healthcare Navigation
+│       ├── Task/           # 🏥 Project: Cura Healthcare & VWO
 │       │   ├── Project2_Cura_Navigation.spec.ts
-│       │   └── Project3_App.vwo.com.spec.ts
-│       └── [219-224].spec.ts # Locator & Command labs
+│       │   ├── Project3_App.vwo.com.spec.ts
+│       │   └── Project3_vwo.com_FreeTrailInvalidEmail.spec.ts
+│       └── [219-227].spec.ts # Locator & Command labs
+│   └── 04_Session_Storage/    # 🔑 Session & State Persistence
+│       └── [228-229].spec.ts  # Session management labs
 ├── playwright-report/      # 📊 Results & Insights
 ├── test-results/           # 📸 Evidence (Screenshots & Videos)
 ├── playwright.config.ts    # ⚙️ Global Configuration
@@ -109,6 +124,7 @@ npx playwright install
 | **Focus on Basics** | `npx playwright test tests/01_Basics` |
 | **Context Deep Dive** | `npx playwright test tests/02_First_Tests` |
 | **Locator Project** | `npx playwright test tests/03_Locators_Commands` |
+| **Session Persistence** | `npx playwright test tests/04_Session_Storage` |
 | **Interactive Debugging** | `npx playwright test --ui` |
 | **Analyze Results** | `npx playwright show-report` |
 
