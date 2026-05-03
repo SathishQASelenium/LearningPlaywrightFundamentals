@@ -49,6 +49,14 @@ I've structured this project as a structured curriculum. Each module represents 
   - `228`: Session management fundamentals.
   - `229`: Applying session persistence to `app.vwo.com`.
 
+### 🟣 Stage 5: Advanced Reporting & Projects (`05_Allure_Reporting`)
+*Mastering professional reporting and comprehensive project automation.*
+- **Reporting Framework**: Integration of **Allure Reporting** for detailed test visibility and stakeholder communication.
+- **Custom Tooling**: Implementation of `CustomTTAReporter.ts` to enhance report metadata.
+- **Capstone Project**: 
+  - `Project 4: TTA Bank` — End-to-end automation of fund transfers, balance validation, and account management.
+- **Artifacts**: Automated generation of screenshots, videos, and trace files for every test execution.
+
 
 ---
 
@@ -64,9 +72,11 @@ graph TD
     C --> D[01_Basics: Foundations]
     C --> E[02_First_Tests: State Management]
     C --> F[03_Locators_Commands: Robustness]
+    C --> H[05_Allure_Reporting: Advanced Reporting]
     D --> G[DOM Interaction]
     E --> H[Multi-Context Strategy]
     F --> I[Production-Grade Locators]
+    H --> K[Allure & Capstone Projects]
     G & H & I --> J[HTML Reports & Trace Analysis]
 ```
 
@@ -96,6 +106,13 @@ LearningPlaywrightFundamentals/
 │       └── [219-227].spec.ts # Locator & Command labs
 │   └── 04_Session_Storage/    # 🔑 Session & State Persistence
 │       └── [228-229].spec.ts  # Session management labs
+│   └── 05_Allure_Reporting/    # 📊 Advanced Reporting & Capstones
+│       ├── 230_Login.spec.ts    # Reporting labs
+│       └── Projects/           # 🏆 Final Capstone Projects
+│           └── Project_4_TTA_Bank/
+│               ├── TTA_Bank.spec.ts
+│               └── README.md
+├── tta-report/               # 📈 Custom Automation Reports
 ├── playwright-report/      # 📊 Results & Insights
 ├── test-results/           # 📸 Evidence (Screenshots & Videos)
 ├── playwright.config.ts    # ⚙️ Global Configuration
@@ -125,6 +142,7 @@ npx playwright install
 | **Context Deep Dive** | `npx playwright test tests/02_First_Tests` |
 | **Locator Project** | `npx playwright test tests/03_Locators_Commands` |
 | **Session Persistence** | `npx playwright test tests/04_Session_Storage` |
+| **Advanced Reporting** | `npx playwright test tests/05_Allure_Reporting` |
 | **Interactive Debugging** | `npx playwright test --ui` |
 | **Analyze Results** | `npx playwright show-report` |
 
