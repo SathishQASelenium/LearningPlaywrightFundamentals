@@ -109,9 +109,6 @@ LearningPlaywrightFundamentals/
 │   ├── 05_Allure_Reporting/    # 📊 Advanced Reporting & Reporting Labs
 │   │   └── 230_Login.spec.ts    # Reporting labs
 │   └── Projects/               # 🏆 Capstone Projects
-│       ├── Project2_Cura_Navigation.spec.ts
-│       ├── Project3_App.vwo.com.spec.ts
-│       ├── Project3_vwo.com_FreeTrailInvalidEmail.spec.ts
 │       └── Project_4_TTA_Bank/
 │           ├── TTA_Bank.spec.ts
 │           └── README.md
