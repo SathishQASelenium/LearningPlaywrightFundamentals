@@ -33,4 +33,5 @@ The latest run result and screenshots can be found in the report:
 `tta-report/report_20260503_085450.html`
 
 **Latest Screenshot:**
-![TTA Bank Test Result](tta-report/screenshots/screenshot_1_1.png)
+![TTA Bank Test Result]
+<img width="1918" height="845" alt="image" src="https://github.com/user-attachments/assets/f9993c7d-16a1-405d-a1b3-a08f6e66b93f" />
