@@ -106,12 +106,15 @@ LearningPlaywrightFundamentals/
 │       └── [219-227].spec.ts # Locator & Command labs
 │   └── 04_Session_Storage/    # 🔑 Session & State Persistence
 │       └── [228-229].spec.ts  # Session management labs
-│   └── 05_Allure_Reporting/    # 📊 Advanced Reporting & Capstones
-│       ├── 230_Login.spec.ts    # Reporting labs
-│       └── Projects/           # 🏆 Final Capstone Projects
-│           └── Project_4_TTA_Bank/
-│               ├── TTA_Bank.spec.ts
-│               └── README.md
+│   ├── 05_Allure_Reporting/    # 📊 Advanced Reporting & Reporting Labs
+│   │   └── 230_Login.spec.ts    # Reporting labs
+│   └── Projects/               # 🏆 Capstone Projects
+│       ├── Project2_Cura_Navigation.spec.ts
+│       ├── Project3_App.vwo.com.spec.ts
+│       ├── Project3_vwo.com_FreeTrailInvalidEmail.spec.ts
+│       └── Project_4_TTA_Bank/
+│           ├── TTA_Bank.spec.ts
+│           └── README.md
 ├── tta-report/               # 📈 Custom Automation Reports
 ├── playwright-report/      # 📊 Results & Insights
 ├── test-results/           # 📸 Evidence (Screenshots & Videos)
