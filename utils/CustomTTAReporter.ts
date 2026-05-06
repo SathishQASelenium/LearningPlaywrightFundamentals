@@ -116,7 +116,7 @@ class CustomTTAReporter implements Reporter {
         this.testStepCounterMap.set(test.id, 0);
         this.testCounter++;
 
-        const testFile = test.location.file.split('/').pop() || '';
+        const testFile = path.basename(test.location.file);
         console.log(`\n▶️  STARTING: ${test.title}`);
         console.log(`   📁 File: ${testFile}`);
         console.log(`   📍 Suite: ${test.parent.title}`);
@@ -268,7 +268,7 @@ class CustomTTAReporter implements Reporter {
                 }
             }
 
-            if (attachment.name === 'trace' && attachment.path) {
+            if ((attachment.name?.toLowerCase().includes('trace') || attachment.contentType === 'application/zip') && attachment.path) {
                 const traceName = `trace_${this.testCounter}.zip`;
                 const destPath = path.join('tta-report', 'traces', traceName);
                 const destDir = path.dirname(destPath);
@@ -328,8 +328,7 @@ class CustomTTAReporter implements Reporter {
             fullTitle: [...describePath, test.title].join(' › '),
             file: test.location.file,
             describePath: describePath,
-            //location: `${test.location.file.split('/').pop()}:${test.location.line}`,
-            location: path.basename(test.location.file) + `:${test.location.line}`,
+            location: `${path.basename(test.location.file)}:${test.location.line}`,
             duration: result.duration,
             status: status,
             retry: result.retry,
@@ -455,10 +454,6 @@ class CustomTTAReporter implements Reporter {
     }
 
     private associateLogsWithSteps(_test: TestCase, result: TestResult, testSteps: StepData[]): void {
-        if (testSteps.length === 0) {
-            return;
-        }
-
         // Initialize consoleLogs array for all steps
         for (const step of testSteps) {
             if (!step.consoleLogs) {
@@ -501,9 +496,9 @@ class CustomTTAReporter implements Reporter {
 
         for (const chunk of stdout) {
             if (typeof chunk === 'string') {
-                allLogs.push(...chunk.split('\n').filter(line => line.trim()));
+                allLogs.push(...chunk.split('\n').filter(line => line.trim()).map(line => this.stripAnsiCodes(line)));
             } else if (Buffer.isBuffer(chunk)) {
-                allLogs.push(...chunk.toString().split('\n').filter(line => line.trim()));
+                allLogs.push(...chunk.toString().split('\n').filter(line => line.trim()).map(line => this.stripAnsiCodes(line)));
             }
         }
 
@@ -511,13 +506,30 @@ class CustomTTAReporter implements Reporter {
         const stderr = result.stderr || [];
         for (const chunk of stderr) {
             if (typeof chunk === 'string') {
-                allLogs.push(...chunk.split('\n').filter(line => line.trim()).map(line => `[stderr] ${line}`));
+                allLogs.push(...chunk.split('\n').filter(line => line.trim()).map(line => `[stderr] ${this.stripAnsiCodes(line)}`));
             } else if (Buffer.isBuffer(chunk)) {
-                allLogs.push(...chunk.toString().split('\n').filter(line => line.trim()).map(line => `[stderr] ${line}`));
+                allLogs.push(...chunk.toString().split('\n').filter(line => line.trim()).map(line => `[stderr] ${this.stripAnsiCodes(line)}`));
             }
         }
 
         if (allLogs.length === 0) {
+            return;
+        }
+
+        // BUG FIX: If there are no test steps, create a synthetic "Console Logs" step
+        // so that console output is still captured and shown in the report.
+        if (testSteps.length === 0) {
+            testSteps.push({
+                title: 'Console Logs',
+                category: 'test.step',
+                duration: 0,
+                status: 'passed',
+                startTime: new Date().toLocaleTimeString(),
+                consoleLogs: [...allLogs],
+                stepIndex: 0,
+                videoStartTime: 0,
+                videoEndTime: 0,
+            });
             return;
         }
 
@@ -562,8 +574,8 @@ class CustomTTAReporter implements Reporter {
             const stepsNeedingLogs = testSteps.filter(s => s.consoleLogs!.length === 0);
 
             if (stepsNeedingLogs.length > 0) {
-                // Distribute logs evenly among steps that need them
-                const logsPerStep = Math.ceil(unassignedLogs.length / testSteps.length);
+                // BUG FIX: Divide by stepsNeedingLogs.length, NOT testSteps.length
+                const logsPerStep = Math.ceil(unassignedLogs.length / stepsNeedingLogs.length);
                 let logIdx = 0;
 
                 for (let stepIdx = 0; stepIdx < testSteps.length && logIdx < unassignedLogs.length; stepIdx++) {
@@ -577,6 +589,11 @@ class CustomTTAReporter implements Reporter {
                             step.consoleLogs!.push(unassignedLogs[logIdx++]);
                         }
                     }
+                }
+
+                // BUG FIX: If any logs remain after distribution, add them to the first step
+                if (logIdx < unassignedLogs.length) {
+                    testSteps[0].consoleLogs!.push(...unassignedLogs.slice(logIdx));
                 }
             } else {
                 // All steps have some logs, add remaining to first step
@@ -882,8 +899,8 @@ class CustomTTAReporter implements Reporter {
                 </div>
                 <div class="section-content">
                     <div class="error-box">
-                        <pre class="error-message">${this.escapeHtml(test.error)}</pre>
-                        ${test.errorStack ? `<details class="stack-details"><summary>Call Stack</summary><pre class="stack-trace-content">${this.escapeHtml(test.errorStack)}</pre></details>` : ''}
+                        <pre class="error-message">${this.escapeHtml(this.stripAnsiCodes(test.error))}</pre>
+                        ${test.errorStack ? `<details class="stack-details"><summary>Call Stack</summary><pre class="stack-trace-content">${this.escapeHtml(this.stripAnsiCodes(test.errorStack))}</pre></details>` : ''}
                     </div>
                 </div>
             </div>`;
@@ -946,13 +963,13 @@ class CustomTTAReporter implements Reporter {
                     html += `
                             <div class="step-error">
                                 <div class="step-error-header">❌ Error</div>
-                                <div class="step-error-message">${this.escapeHtml(step.error)}</div>
+                                <div class="step-error-message">${this.escapeHtml(this.stripAnsiCodes(step.error))}</div>
                             </div>`;
                     if (step.stackTrace) {
                         html += `
                             <div class="step-stack-trace">
                                 <div class="step-stack-header">📜 Stack Trace</div>
-                                <pre class="step-stack-content">${this.escapeHtml(step.stackTrace)}</pre>
+                                <pre class="step-stack-content">${this.escapeHtml(this.stripAnsiCodes(step.stackTrace))}</pre>
                             </div>`;
                     }
                 }
@@ -1029,6 +1046,11 @@ class CustomTTAReporter implements Reporter {
             .replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;')
             .replace(/'/g, '&#039;');
+    }
+
+    private stripAnsiCodes(text: string): string {
+        // Remove both standard ANSI escape codes (\x1B[...m) and text-encoded versions ([...m)
+        return text.replace(/\x1B\[[0-9;]*m/g, '').replace(/\[[0-9;]*m/g, '');
     }
 
     private getStyles(): string {
@@ -1149,11 +1171,11 @@ class CustomTTAReporter implements Reporter {
         }
         .stat-label {
             font-size: 13px;
-            color: var(--gray-500);
+            color: var(--gray-700);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-top: 8px;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         /* ========== META SECTION ========== */
@@ -1175,10 +1197,10 @@ class CustomTTAReporter implements Reporter {
         }
         .meta-label {
             font-size: 12px;
-            color: var(--gray-500);
+            color: var(--gray-700);
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            font-weight: 600;
+            font-weight: 700;
         }
         .meta-value {
             font-weight: 600;
@@ -1294,13 +1316,16 @@ class CustomTTAReporter implements Reporter {
             background: white;
             border-radius: var(--radius);
             box-shadow: var(--shadow-lg);
-            overflow: hidden;
+            overflow-x: auto;
+            display: block;
+            width: 100%;
         }
         .test-table {
             width: 100%;
             border-collapse: separate;
             border-spacing: 0;
             font-size: 13px;
+            min-width: 1200px;
         }
         .test-table thead {
             background: linear-gradient(135deg, var(--dark) 0%, var(--gray-700) 100%);

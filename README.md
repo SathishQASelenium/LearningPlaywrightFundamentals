@@ -1,15 +1,15 @@
-# 🎓 Mastery of Playwright: A Learning Journey
+# Mastery of Playwright: A Learning Journey
 
 ![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen)
 ![Playwright Version](https://img.shields.io/badge/Playwright-v1.59.1-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-v5.0+-blue)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-Welcome to my digital laboratory for End-to-End (E2E) testing. This repository is a documented journey of mastering **Playwright**, progressing from foundational browser interactions to complex context management and precision locators.
+Welcome to my digital laboratory for End-to-End (E2E) testing. This repository is a documented journey of mastering **Playwright**, progressing from foundational browser interactions to complex context management, precision locators, and advanced DOM handling.
 
 ---
 
-## 🗺️ The Learning Roadmap
+## The Learning Roadmap
 
 I've structured this project as a structured curriculum. Each module represents a specific skill set acquired during the learning process.
 
@@ -37,7 +37,7 @@ I've structured this project as a structured curriculum. Each module represents 
   - `225`: CSS selectors for precision targeting.
   - `226`: Interaction patterns with `pressSequentially`.
   - `227`: Managing browser cookies and state.
-  - **Capstone**: 
+  - **Capstone Projects**: 
     - `Project2_Cura_Navigation.spec.ts` — a complete automation flow for Cura Healthcare.
     - `Project3_App.vwo.com.spec.ts` — comprehensive testing for app.vwo.com.
     - `Project3_vwo.com_FreeTrailInvalidEmail.spec.ts` — specialized edge-case testing for VWO.
@@ -49,79 +49,114 @@ I've structured this project as a structured curriculum. Each module represents 
   - `228`: Session management fundamentals.
   - `229`: Applying session persistence to `app.vwo.com`.
 
-### 🟣 Stage 5: Advanced Reporting & Projects (`05_Allure_Reporting`)
+### 🟣 Stage 5: Advanced Reporting (`05_Allure_Reporting`)
 *Mastering professional reporting and comprehensive project automation.*
 - **Reporting Framework**: Integration of **Allure Reporting** for detailed test visibility and stakeholder communication.
-- **Custom Tooling**: Implementation of `CustomTTAReporter.ts` to enhance report metadata.
-- **Capstone Project**: 
-  - `Project 4: TTA Bank` — End-to-end automation of fund transfers, balance validation, and account management.
+- **Custom Tooling**: Implementation of `utils/CustomTTAReporter.ts` to enhance report metadata.
 - **Artifacts**: Automated generation of screenshots, videos, and trace files for every test execution.
 
+### ⚫ Stage 6: Multiple Elements (`06_Multiple_Element`)
+*Mastering handling of multiple similar elements with dynamic handling patterns.*
+- **Core Concepts**: Handling arrays of elements, dynamic element waiting, and batch operations.
+- **Practical Application**:
+  - `231`: Working with multiple elements efficiently.
+
+### 🩷 Stage 7: Web Tables (`07_WebTables`)
+*Deep dive into table interactions including dynamic content and data extraction.*
+- **Core Concepts**: Table parsing, cell navigation, and dynamic row handling.
+- **Practical Application**:
+  - `232`: Basic web table interactions and data extraction.
+  - `233`: Advanced dynamic table handling with real-time data validation.
 
 ---
 
-## 🏗️ Engineering Architecture
+## Capstone Projects
+
+### Project 4: TTA Bank
+- `TTA_Bank.spec.ts`: End-to-end automation of fund transfers, balance validation, and account management.
+- Location: `tests/Projects/Project_4_TTA_Bank/`
+
+### Project 5: QA Portfolio
+- `QA_Profile_Form.spec.ts`: Comprehensive form automation testing.
+- Location: `tests/Projects/Project_5_QA_Portfolio/`
+
+---
+
+## Engineering Architecture
 
 The project follows a modular design to ensure that each learning milestone can be tested and debugged in isolation.
 
 ### High-Level Design
-```mermaid
-graph TD
-    A[Playwright Test Runner] --> B{Config: playwright.config.ts}
-    B --> C[Learning Modules]
-    C --> D[01_Basics: Foundations]
-    C --> E[02_First_Tests: State Management]
-    C --> F[03_Locators_Commands: Robustness]
-    C --> H[05_Allure_Reporting: Advanced Reporting]
-    D --> G[DOM Interaction]
-    E --> H[Multi-Context Strategy]
-    F --> I[Production-Grade Locators]
-    H --> K[Allure & Capstone Projects]
-    G & H & I --> J[HTML Reports & Trace Analysis]
+```
+Playwright Test Runner
+    │
+    ▼
+Config: playwright.config.ts
+    │
+    ├──► 01_Basics: Foundations (DOM Interaction)
+    ├──► 02_First_Tests: State Management (Multi-Context Strategy)
+    ├──► 03_Locators_Commands: Robustness (Production-Grade Locators)
+    ├──► 04_Session_Storage: State Persistence (Auth Flows)
+    ├──► 05_Allure_Reporting: Advanced Reporting
+    ├──► 06_Multiple_Element: Batch Operations
+    └──► 07_WebTables: Dynamic Table Handling
+              │
+              ▼
+    HTML Reports & Trace Analysis
 ```
 
 ---
 
-## 📁 Repository Blueprint
+## Repository Blueprint
 
-```text
+```
 LearningPlaywrightFundamentals/
-├── .github/                # 🚀 CI/CD Workflows (GitHub Actions)
-├── tests/                  # 🧪 The Laboratory
-│   ├── 01_Basics/          # 🐣 Foundations
+├── .github/                    # CI/CD Workflows (GitHub Actions)
+├── tests/                      # The Laboratory
+│   ├── 01_Basics/              # Foundations
 │   │   ├── Lab209.spec.ts
 │   │   ├── Lab210_Test_Annoations.spec.ts
 │   │   └── Util.ts
-│   ├── 02_First_Tests/     # 🧠 Context & Page Management
-│   │   ├── Task/           # 🛠️ Practical context exercises
+│   ├── 02_First_Tests/         # Context & Page Management
+│   │   ├── Task/
 │   │   │   ├── 01_OneBrowser_MultipleContext.spec.ts
 │   │   │   ├── 02_OneBrowser_MutipleContext_MultiplePages.spec.ts
 │   │   │   └── 03_OneContext_MultiplePages.spec.ts
-│   │   └── [211-218].spec.ts # Core context learning labs
-│   └── 03_Locators_Commands/ # 🎯 Precision Targeting
-│       ├── Task/           # 🏥 Project: Cura Healthcare & VWO
-│       │   ├── Project2_Cura_Navigation.spec.ts
-│       │   ├── Project3_App.vwo.com.spec.ts
-│       │   └── Project3_vwo.com_FreeTrailInvalidEmail.spec.ts
-│       └── [219-227].spec.ts # Locator & Command labs
-│   └── 04_Session_Storage/    # 🔑 Session & State Persistence
-│       └── [228-229].spec.ts  # Session management labs
-│   ├── 05_Allure_Reporting/    # 📊 Advanced Reporting & Reporting Labs
-│   │   └── 230_Login.spec.ts    # Reporting labs
-│   └── Projects/               # 🏆 Capstone Projects
-│       └── Project_4_TTA_Bank/
-│           ├── TTA_Bank.spec.ts
-│           └── README.md
-├── tta-report/               # 📈 Custom Automation Reports
-├── playwright-report/      # 📊 Results & Insights
-├── test-results/           # 📸 Evidence (Screenshots & Videos)
-├── playwright.config.ts    # ⚙️ Global Configuration
-└── package.json            # 📦 Project Dependencies
+│   │   └── [211-218].spec.ts
+│   ├── 03_Locators_Commands/   # Precision Targeting
+│   │   ├── Task/
+│   │   │   ├── Project2_Cura_Navigation.spec.ts
+│   │   │   ├── Project3_App.vwo.com.spec.ts
+│   │   │   └── Project3_vwo.com_FreeTrailInvalidEmail.spec.ts
+│   │   └── [219-227].spec.ts
+│   ├── 04_Session_Storage/     # Session & State Persistence
+│   │   ├── 228_Session.spec.ts
+│   │   └── 229.TestVWo.spec.ts
+│   ├── 05_Allure_Reporting/    # Advanced Reporting
+│   │   └── 230_Login.spec.ts
+│   ├── 06_Multiple_Element/    # Multiple Elements Handling
+│   │   └── 231_Multiple_Elements.spec.ts
+│   ├── 07_WebTables/           # Web Table Interactions
+│   │   ├── 232_WebTable_Basic.spec.ts
+│   │   └── 233_WebTable_Dyanamic.spec.ts
+│   └── Projects/
+│       ├── Project_4_TTA_Bank/
+│       │   ├── TTA_Bank.spec.ts
+│       │   └── README.md
+│       └── Project_5_QA_Portfolio/
+│           ├── QA_Profile_Form.spec.ts
+│           ├── README.md
+│           └── screenshot.png
+├── tta-report/                 # Custom Automation Reports
+├── playwright-report/          # Results & Insights
+├── test-results/               # Evidence (Screenshots & Videos)
+├── playwright.config.ts        # Global Configuration
+└── package.json                # Project Dependencies
 ```
 
 ---
 
-## ⚙️ Quick Start Guide
+## Quick Start Guide
 
 ### Installation
 ```bash
@@ -143,24 +178,27 @@ npx playwright install
 | **Locator Project** | `npx playwright test tests/03_Locators_Commands` |
 | **Session Persistence** | `npx playwright test tests/04_Session_Storage` |
 | **Advanced Reporting** | `npx playwright test tests/05_Allure_Reporting` |
+| **Multiple Elements** | `npx playwright test tests/06_Multiple_Element` |
+| **Web Tables** | `npx playwright test tests/07_WebTables` |
+| **Capstone Projects** | `npx playwright test tests/Projects` |
 | **Interactive Debugging** | `npx playwright test --ui` |
 | **Analyze Results** | `npx playwright show-report` |
 
 ---
 
-## 🚀 CI/CD: The Quality Gate
+## CI/CD: The Quality Gate
 
 Integrated GitHub Actions ensure that every new lab added maintains the stability of the existing suite.
 
 **The Pipeline Logic:**
-`Push` $\rightarrow$ `Install Deps` $\rightarrow$ `Browser Setup` $\rightarrow$ `Headless Execution` $\rightarrow$ `Artifact Upload`
+`Push` → `Install Deps` → `Browser Setup` → `Headless Execution` → `Artifact Upload`
 
 ---
 
-## 🛠️ Technical Stack
+## Technical Stack
 
 - **Language**: TypeScript (Strict mode)
 - **Framework**: Playwright Test
-- **Reporting**: HTML Reports
+- **Reporting**: HTML Reports & Allure
 - **CI**: GitHub Actions
 - **Analysis**: Playwright Trace Viewer (Retained on failure)
