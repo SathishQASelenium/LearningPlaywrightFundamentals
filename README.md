@@ -49,13 +49,13 @@ I've structured this project as a structured curriculum. Each module represents 
   - `228`: Session management fundamentals.
   - `229`: Applying session persistence to `app.vwo.com`.
 
-### 🟣 Stage 5: Advanced Reporting (`05_Allure_Reporting`)
+### 🟤 Stage 5: Advanced Reporting (`05_Allure_Reporting`)
 *Mastering professional reporting and comprehensive project automation.*
 - **Reporting Framework**: Integration of **Allure Reporting** for detailed test visibility and stakeholder communication.
 - **Custom Tooling**: Implementation of `utils/CustomTTAReporter.ts` to enhance report metadata.
 - **Artifacts**: Automated generation of screenshots, videos, and trace files for every test execution.
 
-### ⚫ Stage 6: Multiple Elements (`06_Multiple_Element`)
+### ⚪ Stage 6: Multiple Elements (`06_Multiple_Element`)
 *Mastering handling of multiple similar elements with dynamic handling patterns.*
 - **Core Concepts**: Handling arrays of elements, dynamic element waiting, and batch operations.
 - **Practical Application**:
@@ -67,6 +67,16 @@ I've structured this project as a structured curriculum. Each module represents 
 - **Practical Application**:
   - `232`: Basic web table interactions and data extraction.
   - `233`: Advanced dynamic table handling with real-time data validation.
+
+### ⚪ Stage 8: Frames & Iframes (`08_Web_Select_Frames_Iframe`)
+*Mastering frame and iframe interactions for complex web applications.*
+- **Core Concepts**: Frame handling, iframe navigation, and multi-context frame switching.
+- **Practical Application**:
+  - `234`: Frame selection and interaction basics.
+  - `235`: Working with web frames on various sites.
+  - `236`: Advanced frame handling techniques.
+  - `237`: Pro-level frame selection strategies.
+  - `238`: Advanced frame handling v2 with complex scenarios.
 
 ---
 
@@ -103,7 +113,8 @@ Config: playwright.config.ts
     ├──► 04_Session_Storage: State Persistence (Auth Flows)
     ├──► 05_Allure_Reporting: Advanced Reporting
     ├──► 06_Multiple_Element: Batch Operations
-    └──► 07_WebTables: Dynamic Table Handling
+    ├──► 07_WebTables: Dynamic Table Handling
+    └──► 08_Web_Select_Frames_Iframe: Frame & Iframe Interactions
               │
               ▼
     HTML Reports & Trace Analysis
@@ -143,6 +154,12 @@ LearningPlaywrightFundamentals/
 │   ├── 07_WebTables/           # Web Table Interactions
 │   │   ├── 232_WebTable_Basic.spec.ts
 │   │   └── 233_WebTable_Dyanamic.spec.ts
+│   ├── 08_Web_Select_Frames_Iframe/  # Frame & Iframe Handling
+│   │   ├── 234_Web.spec.ts
+│   │   ├── 235_Select_FramesWeb.spec.ts
+│   │   ├── 236_Advance_Select_Frames2.spec.ts
+│   │   ├── 237_Advance_Select_Pro.spec.ts
+│   │   └── 238_Advance_Select_Pro_v2.spec.ts
 │   └── Projects/
 │       ├── Project_4_TTA_Bank/
 │       │   ├── TTA_Bank.spec.ts
@@ -188,6 +205,7 @@ npx playwright install
 | **Advanced Reporting** | `npx playwright test tests/05_Allure_Reporting` |
 | **Multiple Elements** | `npx playwright test tests/06_Multiple_Element` |
 | **Web Tables** | `npx playwright test tests/07_WebTables` |
+| **Frames & Iframes** | `npx playwright test tests/08_Web_Select_Frames_Iframe` |
 | **Capstone Projects** | `npx playwright test tests/Projects` |
 | **Interactive Debugging** | `npx playwright test --ui` |
 | **Analyze Results** | `npx playwright show-report` |
