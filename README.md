@@ -80,6 +80,10 @@ I've structured this project as a structured curriculum. Each module represents 
 - `QA_Profile_Form.spec.ts`: Comprehensive form automation testing.
 - Location: `tests/Projects/Project_5_QA_Portfolio/`
 
+### Project 6: Web Table Automation
+- `WebTable.spec.ts`: Automation of search and selection in dynamic web tables.
+- Location: `tests/Projects/Project_6_Web_Table/`
+
 ---
 
 ## Engineering Architecture
@@ -143,10 +147,14 @@ LearningPlaywrightFundamentals/
 │       ├── Project_4_TTA_Bank/
 │       │   ├── TTA_Bank.spec.ts
 │       │   └── README.md
-│       └── Project_5_QA_Portfolio/
-│           ├── QA_Profile_Form.spec.ts
+│       ├── Project_5_QA_Portfolio/
+│       │   ├── QA_Profile_Form.spec.ts
+│       │   ├── README.md
+│       │   └── screenshot.png
+│       └── Project_6_Web_Table/
+│           ├── WebTable.spec.ts
 │           ├── README.md
-│           └── screenshot.png
+│           └── screenshot_1_1.png
 ├── tta-report/                 # Custom Automation Reports
 ├── playwright-report/          # Results & Insights
 ├── test-results/               # Evidence (Screenshots & Videos)
