@@ -78,6 +78,15 @@ I've structured this project as a structured curriculum. Each module represents 
   - `237`: Pro-level frame selection strategies.
   - `238`: Advanced frame handling v2 with complex scenarios.
 
+### 🟣 Stage 9: Frame & Iframe Deep Dive (`09_Frame_Iframe`)
+*Advanced exploration of complex iframe nesting and multi-frame synchronization.*
+- **Core Concepts**: Nested iframes, multi-frame transitions, and recursive frame traversal.
+- **Practical Application**:
+  - `239`: Iframe interaction fundamentals.
+  - `240`: Handling multiple frames concurrently.
+  - `241`: Navigating nested iframes (Iframe within Iframe).
+  - `Task_Nested_Iframes`: Practical challenge for recursive frame handling.
+
 ---
 
 ## Capstone Projects
@@ -114,7 +123,8 @@ Config: playwright.config.ts
     ├──► 05_Allure_Reporting: Advanced Reporting
     ├──► 06_Multiple_Element: Batch Operations
     ├──► 07_WebTables: Dynamic Table Handling
-    └──► 08_Web_Select_Frames_Iframe: Frame & Iframe Interactions
+    ├──► 08_Web_Select_Frames_Iframe: Frame & Iframe Interactions
+    └──► 09_Frame_Iframe: Advanced Iframe Deep Dive
               │
               ▼
     HTML Reports & Trace Analysis
@@ -160,6 +170,16 @@ LearningPlaywrightFundamentals/
 │   │   ├── 236_Advance_Select_Frames2.spec.ts
 │   │   ├── 237_Advance_Select_Pro.spec.ts
 │   │   └── 238_Advance_Select_Pro_v2.spec.ts
+│   ├── 09_Frame_Iframe/              # Advanced Frame Deep Dive
+│   │   ├── 239_iframe.spec.ts
+│   │   ├── 240_Multi_Frame.spec.ts
+│   │   ├── 241_Iframe_Within_Iframe.spec.ts
+│   │   └── Task_Nested_Iframes.spec.ts
+│   ├── TTA_PracticePages/            # Practice Labs for Core Skills
+│   │   ├── 01_Selectors_and_Locators/
+│   │   │   ├── 01_Multiple_Elemenet_Filter_Login.spec.ts
+│   │   │   └── 02_Web_Table_Employee_Directory.spec.ts
+│   │   └── 02_Tables_and_Forms/
 │   └── Projects/
 │       ├── Project_4_TTA_Bank/
 │       │   ├── TTA_Bank.spec.ts
@@ -206,6 +226,8 @@ npx playwright install
 | **Multiple Elements** | `npx playwright test tests/06_Multiple_Element` |
 | **Web Tables** | `npx playwright test tests/07_WebTables` |
 | **Frames & Iframes** | `npx playwright test tests/08_Web_Select_Frames_Iframe` |
+| **Advanced Iframes** | `npx playwright test tests/09_Frame_Iframe` |
+| **Practice Labs** | `npx playwright test tests/TTA_PracticePages` |
 | **Capstone Projects** | `npx playwright test tests/Projects` |
 | **Interactive Debugging** | `npx playwright test --ui` |
 | **Analyze Results** | `npx playwright show-report` |
