@@ -85,7 +85,6 @@ I've structured this project as a structured curriculum. Each module represents 
   - `239`: Iframe interaction fundamentals.
   - `240`: Handling multiple frames concurrently.
   - `241`: Navigating nested iframes (Iframe within Iframe).
-  - `Task_Nested_Iframes`: Practical challenge for recursive frame handling.
 
 ### 🟡 Stage 10: Keyboard, Hover, Drag & Drop (`10_Keyboard_Hover_Drag_Drop`)
 *Mastering advanced input interactions beyond simple clicks and typing.*
@@ -97,7 +96,6 @@ I've structured this project as a structured curriculum. Each module represents 
   - `245`: Basic drag-and-drop operations.
   - `246`: Advanced drag-and-drop with complex targets.
   - `247`: Right-click context menu automation.
-  - `Task_Hover`: Practical challenge for hover-based interactions.
 
 ### 🟢 Stage 11: JS Alerts (`11_JS_Alerts`)
 *Handling native browser dialog boxes including alerts, confirms, and prompts.*
@@ -120,6 +118,14 @@ I've structured this project as a structured curriculum. Each module represents 
 ### Project 6: Web Table Automation
 - `WebTable.spec.ts`: Automation of search and selection in dynamic web tables.
 - Location: `tests/Projects/Project_6_Web_Table/`
+
+### Project 6: Nested Iframes
+- `Nested_Iframes.spec.ts`: Traversal of three levels of nested iframes with input field interactions.
+- Location: `tests/Projects/Project_6_Iframe/`
+
+### Project 7: Hover Menu
+- `Hover.spec.ts`: Hover-based menu interaction to reveal and click hidden submenu items.
+- Location: `tests/Projects/Project_7_Hover/`
 
 ---
 
@@ -194,14 +200,12 @@ LearningPlaywrightFundamentals/
 │   │   ├── 239_iframe.spec.ts
 │   │   ├── 240_Multi_Frame.spec.ts
 │   │   ├── 241_Iframe_Within_Iframe.spec.ts
-│   │   └── Task_Nested_Iframes.spec.ts
 │   ├── 10_Keyboard_Hover_Drag_Drop/ # Keyboard, Hover, Drag & Drop
 │   │   ├── 242_Keyboard.spec.ts
 │   │   ├── 244_SpiceJet_Hover.spec.ts
 │   │   ├── 245_Drag_Drop.spec.ts
 │   │   ├── 246_Drag_Drop_Advance.spec.ts
 │   │   ├── 247_RightClick.spec.ts
-│   │   └── Task_Hover.spec.ts
 │   ├── 11_JS_Alerts/                # Native JS Dialog Handling
 │   │   └── 243_JS_Alerts.spec.ts
 │   ├── TTA_PracticePages/            # Practice Labs for Core Skills
@@ -221,6 +225,12 @@ LearningPlaywrightFundamentals/
 │           ├── WebTable.spec.ts
 │           ├── README.md
 │           └── screenshot_1_1.png
+│       ├── Project_6_Iframe/
+│       │   ├── Nested_Iframes.spec.ts
+│       │   └── README.md
+│       └── Project_7_Hover/
+│           ├── Hover.spec.ts
+│           └── README.md
 ├── tta-report/                 # Custom Automation Reports
 ├── playwright-report/          # Results & Insights
 ├── test-results/               # Evidence (Screenshots & Videos)
