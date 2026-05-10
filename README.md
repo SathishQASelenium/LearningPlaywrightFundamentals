@@ -87,6 +87,24 @@ I've structured this project as a structured curriculum. Each module represents 
   - `241`: Navigating nested iframes (Iframe within Iframe).
   - `Task_Nested_Iframes`: Practical challenge for recursive frame handling.
 
+### 🟡 Stage 10: Keyboard, Hover, Drag & Drop (`10_Keyboard_Hover_Drag_Drop`)
+*Mastering advanced input interactions beyond simple clicks and typing.*
+- **Core Concepts**: Keyboard events, hover actions, drag-and-drop, and right-click context menus.
+- **Practical Application**:
+  - `242`: Keyboard interaction fundamentals.
+  - `243`: JS Alerts handling.
+  - `244`: Hover interactions on SpiceJet.
+  - `245`: Basic drag-and-drop operations.
+  - `246`: Advanced drag-and-drop with complex targets.
+  - `247`: Right-click context menu automation.
+  - `Task_Hover`: Practical challenge for hover-based interactions.
+
+### 🟢 Stage 11: JS Alerts (`11_JS_Alerts`)
+*Handling native browser dialog boxes including alerts, confirms, and prompts.*
+- **Core Concepts**: Dialog event listeners, alert acceptance/dismissal, and input prompts.
+- **Practical Application**:
+  - `243_JS_Alerts.spec.ts`: Comprehensive JS alert handling including accept, dismiss, and prompt input.
+
 ---
 
 ## Capstone Projects
@@ -124,7 +142,9 @@ Config: playwright.config.ts
     ├──► 06_Multiple_Element: Batch Operations
     ├──► 07_WebTables: Dynamic Table Handling
     ├──► 08_Web_Select_Frames_Iframe: Frame & Iframe Interactions
-    └──► 09_Frame_Iframe: Advanced Iframe Deep Dive
+    ├──► 09_Frame_Iframe: Advanced Iframe Deep Dive
+    ├──► 10_Keyboard_Hover_Drag_Drop: Advanced Input Interactions
+    └──► 11_JS_Alerts: Native Dialog Handling
               │
               ▼
     HTML Reports & Trace Analysis
@@ -170,11 +190,20 @@ LearningPlaywrightFundamentals/
 │   │   ├── 236_Advance_Select_Frames2.spec.ts
 │   │   ├── 237_Advance_Select_Pro.spec.ts
 │   │   └── 238_Advance_Select_Pro_v2.spec.ts
-│   ├── 09_Frame_Iframe/              # Advanced Frame Deep Dive
+│       ├── 09_Frame_Iframe/              # Advanced Frame Deep Dive
 │   │   ├── 239_iframe.spec.ts
 │   │   ├── 240_Multi_Frame.spec.ts
 │   │   ├── 241_Iframe_Within_Iframe.spec.ts
 │   │   └── Task_Nested_Iframes.spec.ts
+│   ├── 10_Keyboard_Hover_Drag_Drop/ # Keyboard, Hover, Drag & Drop
+│   │   ├── 242_Keyboard.spec.ts
+│   │   ├── 244_SpiceJet_Hover.spec.ts
+│   │   ├── 245_Drag_Drop.spec.ts
+│   │   ├── 246_Drag_Drop_Advance.spec.ts
+│   │   ├── 247_RightClick.spec.ts
+│   │   └── Task_Hover.spec.ts
+│   ├── 11_JS_Alerts/                # Native JS Dialog Handling
+│   │   └── 243_JS_Alerts.spec.ts
 │   ├── TTA_PracticePages/            # Practice Labs for Core Skills
 │   │   ├── 01_Selectors_and_Locators/
 │   │   │   ├── 01_Multiple_Elemenet_Filter_Login.spec.ts
@@ -227,6 +256,8 @@ npx playwright install
 | **Web Tables** | `npx playwright test tests/07_WebTables` |
 | **Frames & Iframes** | `npx playwright test tests/08_Web_Select_Frames_Iframe` |
 | **Advanced Iframes** | `npx playwright test tests/09_Frame_Iframe` |
+| **Keyboard, Hover & Drag** | `npx playwright test tests/10_Keyboard_Hover_Drag_Drop` |
+| **JS Alerts** | `npx playwright test tests/11_JS_Alerts` |
 | **Practice Labs** | `npx playwright test tests/TTA_PracticePages` |
 | **Capstone Projects** | `npx playwright test tests/Projects` |
 | **Interactive Debugging** | `npx playwright test --ui` |
