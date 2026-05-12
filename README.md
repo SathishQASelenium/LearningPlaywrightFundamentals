@@ -97,11 +97,13 @@ I've structured this project as a structured curriculum. Each module represents 
   - `246`: Advanced drag-and-drop with complex targets.
   - `247`: Right-click context menu automation.
 
-### 🟢 Stage 11: JS Alerts (`11_JS_Alerts`)
-*Handling native browser dialog boxes including alerts, confirms, and prompts.*
-- **Core Concepts**: Dialog event listeners, alert acceptance/dismissal, and input prompts.
+### 🟣 Stage 12: Handle SVG (`12_Handle_SVG`)
+*Mastering interaction with Scalable Vector Graphics (SVG) elements.*
+- **Core Concepts**: SVG locators, interacting with vector shapes, and precision targeting of SVG paths.
 - **Practical Application**:
-  - `243_JS_Alerts.spec.ts`: Comprehensive JS alert handling including accept, dismiss, and prompt input.
+  - `248_SVG_Project.spec.ts`: SVG automation project.
+  - `249_SVG_Practice.spec.ts`: SVG interaction practice.
+  - `250_Advance_SVG_Project.spec.ts`: Advanced SVG handling scenarios.
 
 ---
 
@@ -127,6 +129,10 @@ I've structured this project as a structured curriculum. Each module represents 
 - `Hover.spec.ts`: Hover-based menu interaction to reveal and click hidden submenu items.
 - Location: `tests/Projects/Project_7_Hover/`
 
+### Project 8: Flipkart SVG
+- `Flipkart_Macmini_Search.spec.ts`: Automation of SVG-based elements and search flows on Flipkart.
+- Location: `tests/Projects/Project_8_Flipkart_SVG/`
+
 ---
 
 ## Engineering Architecture
@@ -150,7 +156,8 @@ Config: playwright.config.ts
     ├──► 08_Web_Select_Frames_Iframe: Frame & Iframe Interactions
     ├──► 09_Frame_Iframe: Advanced Iframe Deep Dive
     ├──► 10_Keyboard_Hover_Drag_Drop: Advanced Input Interactions
-    └──► 11_JS_Alerts: Native Dialog Handling
+    ├──► 11_JS_Alerts: Native Dialog Handling
+    └──► 12_Handle_SVG: SVG Element Interactions
               │
               ▼
     HTML Reports & Trace Analysis
@@ -179,6 +186,7 @@ LearningPlaywrightFundamentals/
 │   │   │   ├── Project2_Cura_Navigation.spec.ts
 │   │   │   ├── Project3_App.vwo.com.spec.ts
 │   │   │   └── Project3_vwo.com_FreeTrailInvalidEmail.spec.ts
+│   │   ├── index.html
 │   │   └── [219-227].spec.ts
 │   ├── 04_Session_Storage/     # Session & State Persistence
 │   │   ├── 228_Session.spec.ts
@@ -195,19 +203,27 @@ LearningPlaywrightFundamentals/
 │   │   ├── 235_Select_FramesWeb.spec.ts
 │   │   ├── 236_Advance_Select_Frames2.spec.ts
 │   │   ├── 237_Advance_Select_Pro.spec.ts
-│   │   └── 238_Advance_Select_Pro_v2.spec.ts
-│       ├── 09_Frame_Iframe/              # Advanced Frame Deep Dive
+│   │   ├── 238_Advance_Select_Pro_v2.spec.ts
+│   │   └── util.ts
+│   ├── 09_Frame_Iframe/              # Advanced Frame Deep Dive
 │   │   ├── 239_iframe.spec.ts
 │   │   ├── 240_Multi_Frame.spec.ts
-│   │   ├── 241_Iframe_Within_Iframe.spec.ts
+│   │   └── 241_Iframe_Within_Iframe.spec.ts
 │   ├── 10_Keyboard_Hover_Drag_Drop/ # Keyboard, Hover, Drag & Drop
 │   │   ├── 242_Keyboard.spec.ts
 │   │   ├── 244_SpiceJet_Hover.spec.ts
 │   │   ├── 245_Drag_Drop.spec.ts
 │   │   ├── 246_Drag_Drop_Advance.spec.ts
 │   │   ├── 247_RightClick.spec.ts
+│   │   ├── A.png
+│   │   ├── ArrowLeft.png
+│   │   └── Shift+O.png
 │   ├── 11_JS_Alerts/                # Native JS Dialog Handling
 │   │   └── 243_JS_Alerts.spec.ts
+│   ├── 12_Handle_SVG/                  # SVG Element Interactions
+│   │   ├── 248_SVG_Project.spec.ts
+│   │   ├── 249_SVG_Practice.spec.ts
+│   │   └── 250_Advance_SVG_Project.spec.ts
 │   ├── TTA_PracticePages/            # Practice Labs for Core Skills
 │   │   ├── 01_Selectors_and_Locators/
 │   │   │   ├── 01_Multiple_Elemenet_Filter_Login.spec.ts
@@ -216,20 +232,24 @@ LearningPlaywrightFundamentals/
 │   └── Projects/
 │       ├── Project_4_TTA_Bank/
 │       │   ├── TTA_Bank.spec.ts
-│       │   └── README.md
+│       │   ├── README.md
+│       │   └── image.png
 │       ├── Project_5_QA_Portfolio/
 │       │   ├── QA_Profile_Form.spec.ts
 │       │   ├── README.md
 │       │   └── screenshot.png
-│       └── Project_6_Web_Table/
-│           ├── WebTable.spec.ts
-│           ├── README.md
-│           └── screenshot_1_1.png
+│       ├── Project_6_Web_Table/
+│       │   ├── WebTable.spec.ts
+│       │   ├── README.md
+│       │   └── screenshot.png
 │       ├── Project_6_Iframe/
 │       │   ├── Nested_Iframes.spec.ts
 │       │   └── README.md
-│       └── Project_7_Hover/
-│           ├── Hover.spec.ts
+│       ├── Project_7_Hover/
+│       │   ├── Hover.spec.ts
+│       │   └── README.md
+│       └── Project_8_Flipkart_SVG/
+│           ├── Flipkart_Macmini_Search.spec.ts
 │           └── README.md
 ├── tta-report/                 # Custom Automation Reports
 ├── playwright-report/          # Results & Insights
@@ -268,6 +288,7 @@ npx playwright install
 | **Advanced Iframes** | `npx playwright test tests/09_Frame_Iframe` |
 | **Keyboard, Hover & Drag** | `npx playwright test tests/10_Keyboard_Hover_Drag_Drop` |
 | **JS Alerts** | `npx playwright test tests/11_JS_Alerts` |
+| **SVG Elements** | `npx playwright test tests/12_Handle_SVG` |
 | **Practice Labs** | `npx playwright test tests/TTA_PracticePages` |
 | **Capstone Projects** | `npx playwright test tests/Projects` |
 | **Interactive Debugging** | `npx playwright test --ui` |
