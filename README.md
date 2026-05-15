@@ -103,7 +103,20 @@ I've structured this project as a structured curriculum. Each module represents 
 - **Practical Application**:
   - `248_SVG_Project.spec.ts`: SVG automation project.
   - `249_SVG_Practice.spec.ts`: SVG interaction practice.
-  - `250_Advance_SVG_Project.spec.ts`: Advanced SVG handling scenarios.
+  - `250_Advance_SVG_Project.spec.ts`: Advanced SVG handling scenarios (clicking India map states).
+
+### 🟢 Stage 13: Shadow DOM (`13_Shadow_DOM`)
+*Interacting with elements inside Shadow DOM boundaries.*
+- **Core Concepts**: Shadow DOM piercing, nested shadow roots, counter widgets inside shadow boundaries.
+- **Practical Application**:
+  - `251_Shadom_DOM.spec.ts`: Filling form fields across single, nested, and multi-component shadow DOMs.
+
+### 🔵 Stage 14: File Upload (`14_FileUpload`)
+*Automating single and multiple file upload scenarios.*
+- **Core Concepts**: `setInputFiles` for real files and dynamic buffers, multi-file upload validation.
+- **Practical Application**:
+  - `252_FileUpload.spec.ts`: Single file upload on `the-internet.herokuapp.com`.
+  - `253_Multi_FileUpload.spec.ts`: Multiple file upload with dynamic buffers on PatternFly.
 
 ---
 
@@ -133,6 +146,10 @@ I've structured this project as a structured curriculum. Each module represents 
 - `Flipkart_Macmini_Search.spec.ts`: Automation of SVG-based elements and search flows on Flipkart.
 - Location: `tests/Projects/Project_8_Flipkart_SVG/`
 
+### Project 9: Shadow DOM
+- `SelectorsHub_Shadow_DOM.spec.ts`: Interacting with Shadow DOM elements (Username, Pizza, Password) on SelectorsHub.
+- Location: `tests/Projects/Project_9_Shadow_DOM/`
+
 ---
 
 ## Engineering Architecture
@@ -157,7 +174,9 @@ Config: playwright.config.ts
     ├──► 09_Frame_Iframe: Advanced Iframe Deep Dive
     ├──► 10_Keyboard_Hover_Drag_Drop: Advanced Input Interactions
     ├──► 11_JS_Alerts: Native Dialog Handling
-    └──► 12_Handle_SVG: SVG Element Interactions
+    ├──► 12_Handle_SVG: SVG Element Interactions
+    ├──► 13_Shadow_DOM: Shadow DOM Piercing
+    └──► 14_FileUpload: File Upload Automation
               │
               ▼
     HTML Reports & Trace Analysis
@@ -220,11 +239,19 @@ LearningPlaywrightFundamentals/
 │   │   └── Shift+O.png
 │   ├── 11_JS_Alerts/                # Native JS Dialog Handling
 │   │   └── 243_JS_Alerts.spec.ts
-│   ├── 12_Handle_SVG/                  # SVG Element Interactions
+│   ├── 12_Handle_SVG/               # SVG Element Interactions
 │   │   ├── 248_SVG_Project.spec.ts
 │   │   ├── 249_SVG_Practice.spec.ts
 │   │   └── 250_Advance_SVG_Project.spec.ts
-│   ├── TTA_PracticePages/            # Practice Labs for Core Skills
+│   ├── 13_Shadow_DOM/               # Shadow DOM Interactions
+│   │   └── 251_Shadom_DOM.spec.ts
+│   ├── 14_FileUpload/               # File Upload Automation
+│   │   ├── 252_FileUpload.spec.ts
+│   │   ├── 253_Multi_FileUpload.spec.ts
+│   │   ├── file1.jpg
+│   │   ├── file2.jpg
+│   │   └── testdata.txt
+│   ├── TTA_PracticePages/           # Practice Labs for Core Skills
 │   │   ├── 01_Selectors_and_Locators/
 │   │   │   ├── 01_Multiple_Elemenet_Filter_Login.spec.ts
 │   │   │   └── 02_Web_Table_Employee_Directory.spec.ts
@@ -248,8 +275,11 @@ LearningPlaywrightFundamentals/
 │       ├── Project_7_Hover/
 │       │   ├── Hover.spec.ts
 │       │   └── README.md
-│       └── Project_8_Flipkart_SVG/
-│           ├── Flipkart_Macmini_Search.spec.ts
+│       ├── Project_8_Flipkart_SVG/
+│       │   ├── Flipkart_Macmini_Search.spec.ts
+│       │   └── README.md
+│       └── Project_9_Shadow_DOM/
+│           ├── SelectorsHub_Shadow_DOM.spec.ts
 │           └── README.md
 ├── tta-report/                 # Custom Automation Reports
 ├── playwright-report/          # Results & Insights
@@ -289,6 +319,8 @@ npx playwright install
 | **Keyboard, Hover & Drag** | `npx playwright test tests/10_Keyboard_Hover_Drag_Drop` |
 | **JS Alerts** | `npx playwright test tests/11_JS_Alerts` |
 | **SVG Elements** | `npx playwright test tests/12_Handle_SVG` |
+| **Shadow DOM** | `npx playwright test tests/13_Shadow_DOM` |
+| **File Upload** | `npx playwright test tests/14_FileUpload` |
 | **Practice Labs** | `npx playwright test tests/TTA_PracticePages` |
 | **Capstone Projects** | `npx playwright test tests/Projects` |
 | **Interactive Debugging** | `npx playwright test --ui` |
