@@ -91,11 +91,16 @@ I've structured this project as a structured curriculum. Each module represents 
 - **Core Concepts**: Keyboard events, hover actions, drag-and-drop, and right-click context menus.
 - **Practical Application**:
   - `242`: Keyboard interaction fundamentals.
-  - `243`: JS Alerts handling.
   - `244`: Hover interactions on SpiceJet.
   - `245`: Basic drag-and-drop operations.
   - `246`: Advanced drag-and-drop with complex targets.
   - `247`: Right-click context menu automation.
+
+### 🔔 Stage 11: JS Alerts (`11_JS_Alerts`)
+*Handling native browser dialog boxes (alert, confirm, prompt).*
+- **Core Concepts**: Dialog event listeners, `accept`, `dismiss`, and reading dialog messages.
+- **Practical Application**:
+  - `243`: JS Alerts handling on the-internet.herokuapp.com.
 
 ### 🟣 Stage 12: Handle SVG (`12_Handle_SVG`)
 *Mastering interaction with Scalable Vector Graphics (SVG) elements.*
@@ -117,6 +122,18 @@ I've structured this project as a structured curriculum. Each module represents 
 - **Practical Application**:
   - `252_FileUpload.spec.ts`: Single file upload on `the-internet.herokuapp.com`.
   - `253_Multi_FileUpload.spec.ts`: Multiple file upload with dynamic buffers on PatternFly.
+
+### 🟣 Stage 15: File Download (`15_File_Download`)
+*Automating file download flows with save and validation.*
+- **Core Concepts**: `waitForEvent('download')`, `saveAs`, and suggested filename validation.
+- **Practical Application**:
+  - `254_File_Downlaod.spec.ts`: Static file download from TestingAcademy platform.
+
+### 🟠 Stage 16: Scroll to Element (`16_Scroll_toElement`)
+*Mastering scroll interactions for views, lazy loading, and dynamic content.*
+- **Core Concepts**: `scrollIntoViewIfNeeded`, `window.scrollBy`, `window.scrollTo`, lazy-load list detection.
+- **Practical Application**:
+  - `255_ScrollToView.spec.ts`: Scrolling to anchors, lazy-loaded lists, and dynamic content growth.
 
 ---
 
@@ -176,7 +193,9 @@ Config: playwright.config.ts
     ├──► 11_JS_Alerts: Native Dialog Handling
     ├──► 12_Handle_SVG: SVG Element Interactions
     ├──► 13_Shadow_DOM: Shadow DOM Piercing
-    └──► 14_FileUpload: File Upload Automation
+    ├──► 14_FileUpload: File Upload Automation
+    ├──► 15_File_Download: File Download Flows
+    └──► 16_Scroll_toElement: Scroll Interactions
               │
               ▼
     HTML Reports & Trace Analysis
@@ -251,6 +270,11 @@ LearningPlaywrightFundamentals/
 │   │   ├── file1.jpg
 │   │   ├── file2.jpg
 │   │   └── testdata.txt
+│   ├── 15_File_Download/            # File Download Automation
+│   │   ├── 254_File_Downlaod.spec.ts
+│   │   └── sample-download.txt
+│   ├── 16_Scroll_toElement/         # Scroll Interactions
+│   │   └── 255_ScrollToView.spec.ts
 │   ├── TTA_PracticePages/           # Practice Labs for Core Skills
 │   │   ├── 01_Selectors_and_Locators/
 │   │   │   ├── 01_Multiple_Elemenet_Filter_Login.spec.ts
@@ -321,6 +345,8 @@ npx playwright install
 | **SVG Elements** | `npx playwright test tests/12_Handle_SVG` |
 | **Shadow DOM** | `npx playwright test tests/13_Shadow_DOM` |
 | **File Upload** | `npx playwright test tests/14_FileUpload` |
+| **File Download** | `npx playwright test tests/15_File_Download` |
+| **Scroll to Element** | `npx playwright test tests/16_Scroll_toElement` |
 | **Practice Labs** | `npx playwright test tests/TTA_PracticePages` |
 | **Capstone Projects** | `npx playwright test tests/Projects` |
 | **Interactive Debugging** | `npx playwright test --ui` |
