@@ -135,6 +135,26 @@ I've structured this project as a structured curriculum. Each module represents 
 - **Practical Application**:
   - `255_ScrollToView.spec.ts`: Scrolling to anchors, lazy-loaded lists, and dynamic content growth.
 
+### 🟢 Stage 17: Expect Assertions (`17_Expect_Assertions`)
+*Deep dive into Playwright's assertion library for value, locator, URL, and state validations.*
+- **Core Concepts**: `expect` API, soft assertions, locator-based assertions, URL/title assertions, negation patterns.
+- **Practical Application**:
+  - `256_Expect.spec.ts`: Value assertions (`toBe`, `toEqual`), locator assertions (`toBeVisible`, `toHaveAttribute`, `toHaveCount`), and soft assertions with negation.
+  - `257_URL_Assertions.spec.ts`: URL and title assertions (`toHaveTitle`, `toHaveURL`), element state checks (`toBeChecked`, `toBeEnabled`).
+- **Reference Material**:
+  - `Expect_Assertions_Cheatsheet.md`: Quick reference for all expect matchers.
+  - `More_Expect_Examples.md`: Additional examples for advanced assertion scenarios.
+  - `Playwright_Expect_Reference.md`: Comprehensive reference with interview-ready examples.
+
+### 🔵 Stage 18: Test Hooks & Lifecycle (`18_Test_hooks`)
+*Mastering test lifecycle hooks, modifiers, and structured test organization.*
+- **Core Concepts**: `beforeAll`/`beforeEach`/`afterEach`/`afterAll`, `test.step` for sequential reporting, test modifiers (`skip`, `slow`, `fixme`, `fail`), and `test.describe` modes (serial, parallel).
+- **Practical Application**:
+  - `258_Test_HOOK.spec.ts`: Test modifiers — `test.skip`, `test.slow`, `test.fixme`, `test.fail`.
+  - `259_Grouped_TEST.spec.ts`: Using `test.step` for sequential, report-friendly test steps.
+  - `260_Test_Before_After.spec.ts`: Full lifecycle hooks with automatic failure screenshots.
+  - `261_Group_Describe.spec.ts`: `test.describe.serial` vs `test.describe.parallel` for ordered/parallel execution.
+
 ---
 
 ## Capstone Projects
@@ -195,7 +215,9 @@ Config: playwright.config.ts
     ├──► 13_Shadow_DOM: Shadow DOM Piercing
     ├──► 14_FileUpload: File Upload Automation
     ├──► 15_File_Download: File Download Flows
-    └──► 16_Scroll_toElement: Scroll Interactions
+    ├──► 16_Scroll_toElement: Scroll Interactions
+    ├──► 17_Expect_Assertions: Assertion Library
+    └──► 18_Test_hooks: Test Lifecycle & Hooks
               │
               ▼
     HTML Reports & Trace Analysis
@@ -275,6 +297,17 @@ LearningPlaywrightFundamentals/
 │   │   └── sample-download.txt
 │   ├── 16_Scroll_toElement/         # Scroll Interactions
 │   │   └── 255_ScrollToView.spec.ts
+│   ├── 17_Expect_Assertions/        # Expect Assertions & Cheatsheets
+│   │   ├── 256_Expect.spec.ts
+│   │   ├── 257_URL_Assertions.spec.ts
+│   │   ├── Expect_Assertions_Cheatsheet.md
+│   │   ├── More_Expect_Examples.md
+│   │   └── Playwright_Expect_Reference.md
+│   ├── 18_Test_hooks/               # Test Hooks & Lifecycle
+│   │   ├── 258_Test_HOOK.spec.ts
+│   │   ├── 259_Grouped_TEST.spec.ts
+│   │   ├── 260_Test_Before_After.spec.ts
+│   │   └── 261_Group_Describe.spec.ts
 │   ├── TTA_PracticePages/           # Practice Labs for Core Skills
 │   │   ├── 01_Selectors_and_Locators/
 │   │   │   ├── 01_Multiple_Elemenet_Filter_Login.spec.ts
@@ -347,6 +380,8 @@ npx playwright install
 | **File Upload** | `npx playwright test tests/14_FileUpload` |
 | **File Download** | `npx playwright test tests/15_File_Download` |
 | **Scroll to Element** | `npx playwright test tests/16_Scroll_toElement` |
+| **Expect Assertions** | `npx playwright test tests/17_Expect_Assertions` |
+| **Test Hooks** | `npx playwright test tests/18_Test_hooks` |
 | **Practice Labs** | `npx playwright test tests/TTA_PracticePages` |
 | **Capstone Projects** | `npx playwright test tests/Projects` |
 | **Interactive Debugging** | `npx playwright test --ui` |

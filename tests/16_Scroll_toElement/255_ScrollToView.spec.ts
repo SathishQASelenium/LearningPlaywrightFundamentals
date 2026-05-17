@@ -11,24 +11,23 @@ test.describe('File Upload Demo - TestingAcademy', () => {
 
         // 1) scrollIntoViewIfNeeded — Playwright does the scroll for you
 
-        // await page.getByTestId('deep-anchor').scrollIntoViewIfNeeded();
-        // await page.getByTestId('deep-anchor').click();
+        await page.getByTestId('deep-anchor').scrollIntoViewIfNeeded();
+        await page.getByTestId('deep-anchor').click();
 
-        // await page.waitForTimeout(5000);
+        await page.waitForTimeout(5000);
 
-        // // 2) scrollBy 1000 px
-        // await page.evaluate(() => window.scrollBy(0, 1000));
-        // await page.waitForTimeout(500);
+        // 2) scrollBy 1000 px
+        await page.evaluate(() => window.scrollBy(0, 1000));
+        await page.waitForTimeout(500);
 
-        // // 3) jump to bottom
-        // await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-        // await expect(page.getByTestId('cta-button')).toBeEnabled();
+        // 3) jump to bottom
+        await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+        await expect(page.getByTestId('cta-button')).toBeEnabled();
 
-        // // 4) jump back to top
-        // await page.evaluate(() => window.scrollTo(0, 0));
+        // 4) jump back to top
+        await page.evaluate(() => window.scrollTo(0, 0));
 
         // 5) lazy list grows past 10 once visible
-
         await page.getByTestId('section-lazy').scrollIntoViewIfNeeded();
         await page.getByTestId('lazy-list').scrollIntoViewIfNeeded();
 
